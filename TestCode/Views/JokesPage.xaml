@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestCode.Views.JokesPage" NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid x:Name="bodyContent" >
+            <StackLayout Spacing="0" VerticalOptions="FillAndExpand">
+                <StackLayout BackgroundColor="White" HeightRequest="50" Orientation="Horizontal" Padding="10,0">
+                    <Image Source="icon" VerticalOptions="Center"
+                       HorizontalOptions="StartAndExpand" HeightRequest="40" WidthRequest="40"/>
+                    <StackLayout VerticalOptions="Center" Orientation="Horizontal">
+                        <StackLayout Spacing="0" VerticalOptions="Center">
+                            <Label Text="Handicrafted by" FontSize="10" TextColor="#979797"/>
+                            <Label Text="Jim HLS" FontSize="10" HorizontalOptions="End" TextColor="Black"/>
+                        </StackLayout>
+                        <Frame HorizontalOptions="End" VerticalOptions="Center" HeightRequest="40" CornerRadius="20" Padding="0" BorderColor="Transparent">
+                            <Image Source="caycanh" VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" HeightRequest="40" WidthRequest="40"/>
+                        </Frame>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="150" BackgroundColor="{StaticResource appColor}" Spacing="20" Padding="20,0">
+                    <Label Text="A joke a day keeps the doctor away" TextColor="White" FontSize="20" Margin="0,30,0,0"
+                       VerticalOptions="Start" HorizontalOptions="Center"/>
+                    <Label Text="If you joke wrong way, your teeth have to pay. (Serious)" TextColor="White" FontSize="14" 
+                       VerticalOptions="Start" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <ScrollView VerticalOptions="StartAndExpand">
+                    <Label Text="{Binding Content}"
+                   VerticalOptions="FillAndExpand" Padding="20,60" VerticalTextAlignment="Start" FontSize="16" TextColor="{StaticResource textColor}"
+                   HorizontalTextAlignment="Start"/>
+                </ScrollView>
+                <Grid Padding="20,0" ColumnSpacing="20" VerticalOptions="End">
+                    <Button BackgroundColor="#2C7EDB" HeightRequest="40" Command="{Binding FunnyCommand}"
+                        VerticalOptions="Start" CornerRadius="0" TextColor="White" HorizontalOptions="Center" Padding="30,0"
+                        Text="This is Funny!" TextTransform="None"/>
+                    <Button BackgroundColor="#29B363" HeightRequest="40"  Grid.Column="1" HorizontalOptions="Center" Command="{Binding DontFunnyCommand}"
+                        VerticalOptions="Start" CornerRadius="0" TextColor="White" Text="This is not Funny!" TextTransform="None"/>
+                </Grid>
+                <BoxView HeightRequest="1" VerticalOptions="Start" Color="{StaticResource lineColor}" Margin="0,50,0,0"/>
+                <Label Text="This appis created as part of Hlsolution program. The materials con- tained on this website are provided of general information only and do not constitute any form of advice. HLS assumes no responsibility for the accuracy of any particular statement and accepts no liability for any loss or damage which may arise from reliance on the infor- mation contained on this site"
+                   Padding="10,5" HorizontalTextAlignment="Center" TextColor="#ABABAB" FontSize="12"/>
+                <Label Text="Copyright 2021 HLS" HorizontalOptions="Center" Margin="0,0,0,10"/>
+            </StackLayout>
+            <Grid x:Name="grdControl" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="White">
+                <ActivityIndicator x:Name="aiControl" VerticalOptions="Center" HorizontalOptions="Center" Color="{StaticResource  appColor}" IsRunning="True"
+                                   HeightRequest="40" WidthRequest="40"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
